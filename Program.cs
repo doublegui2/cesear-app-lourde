@@ -74,7 +74,7 @@ namespace AppLourde
             return response;
         }
 
-        public async Task<HttpResponseMessage> UpdateUsername(String token, LoggedUser userUpdated)
+        public async Task<HttpResponseMessage> UpdateUsername(string token, LoggedUser userUpdated)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://84.7.195.152:8080/");
@@ -83,6 +83,7 @@ namespace AppLourde
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
             string userUpdatedJSON = JsonSerializer.Serialize(userUpdated);
+            Debug.WriteLine(userUpdatedJSON);
             var stringContent = new StringContent(userUpdatedJSON);
             HttpResponseMessage response = await client.PatchAsync(
                 "api/v1/update/profile", stringContent);
