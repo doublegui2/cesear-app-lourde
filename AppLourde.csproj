@@ -13,25 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ServiceTechnique - Copier %282%29 - Copier.resx">
-      <DependentUpon>ServiceTechnique - Copier (2).resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="ServiceTechnique - Copier %282%29.resx">
-      <DependentUpon>ServiceTechnique.resx</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Update="ServiceTechnique - Copier %283%29.resx">
-      <DependentUpon>ServiceTechnique.resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="ServiceTechnique - Copier - Copier %282%29.resx">
-      <DependentUpon>ServiceTechnique - Copier.resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="ServiceTechnique - Copier - Copier - Copier.resx">
-      <DependentUpon>ServiceTechnique - Copier - Copier.resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="ServiceTechnique - Copier - Copier.resx">
-      <DependentUpon>ServiceTechnique - Copier.resx</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="ServiceTechnique - Copier.resx">
       <DependentUpon>ServiceTechnique.resx</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
