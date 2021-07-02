@@ -51,6 +51,16 @@ namespace AppLourde
         public float summOrdersAmount { get; set; }
         public float AverageOrderAmount { get; set; }
     }
+    public class Query
+    {
+        public string token { get; set; }
+    }
+
+    public class Request
+    {
+        public Query query { get; set; }
+        public LoggedUser replacement { get; set; }
+    }
 
     static class Program
     {
@@ -86,15 +96,35 @@ namespace AppLourde
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://84.7.195.152:8080/");
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("x-access-token", token);
+            UserInfo userinfo = new UserInfo
+            {
+                username = "admin",
+                password = "admin_ceseat"
+            };
+            var tmp = await LogIn(userinfo);
+            var tmp2 = await tmp.Content.ReadFromJsonAsync<User>();
+            var token2 = tmp2.token;
+            //string tokenv2 = 
+            client.DefaultRequestHeaders.Add("x-access-token", token2);
             /*client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));*/
             string userUpdatedJSON = JsonSerializer.Serialize(userUpdated);
-            Debug.WriteLine(userUpdatedJSON);
+            Query query = new Query
+            {
+                token = token2
+            };
+            Request request = new Request
+            {
+                query = query,
+                replacement = userUpdated
+            };
+            //Debug.WriteLine(userUpdatedJSON);
+            //string test = JsonSerializer.Serialize(request);
+            //Debug.WriteLine(test);
             var stringContent = new StringContent(userUpdatedJSON, System.Text.Encoding.UTF8, "application/json-patch+json");
             Debug.WriteLine(stringContent);
-            HttpResponseMessage response = await client.PatchAsync(
-                "api/v1/update/profile", stringContent);
+            HttpResponseMessage response = await client.PostAsJsonAsync(
+                "api/v1/admin/update/user", request);
             return response;
         }
 

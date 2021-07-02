@@ -51,6 +51,10 @@ namespace AppLourde
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -150,6 +154,10 @@ namespace AppLourde
             // panelProfile
             // 
             this.panelProfile.BackColor = System.Drawing.Color.DimGray;
+            this.panelProfile.Controls.Add(this.label6);
+            this.panelProfile.Controls.Add(this.label5);
+            this.panelProfile.Controls.Add(this.button3);
+            this.panelProfile.Controls.Add(this.button2);
             this.panelProfile.Controls.Add(this.dataGridView1);
             this.panelProfile.Controls.Add(this.label4);
             this.panelProfile.Controls.Add(this.usernameUpdateLabel);
@@ -162,6 +170,7 @@ namespace AppLourde
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(1152, 423);
             this.panelProfile.TabIndex = 2;
+            this.panelProfile.Paint += new System.Windows.Forms.PaintEventHandler(this.panelProfile_Paint);
             // 
             // dataGridView1
             // 
@@ -236,6 +245,7 @@ namespace AppLourde
             // 
             this.textBox3.Location = new System.Drawing.Point(414, 133);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PlaceholderText = "Enter New Email";
             this.textBox3.Size = new System.Drawing.Size(448, 23);
             this.textBox3.TabIndex = 2;
             // 
@@ -243,6 +253,7 @@ namespace AppLourde
             // 
             this.textBox2.Location = new System.Drawing.Point(414, 93);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PlaceholderText = "Enter New Password";
             this.textBox2.Size = new System.Drawing.Size(448, 23);
             this.textBox2.TabIndex = 1;
             // 
@@ -291,6 +302,44 @@ namespace AppLourde
             this.textBox1.Size = new System.Drawing.Size(448, 23);
             this.textBox1.TabIndex = 2;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(890, 93);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 20);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(890, 133);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 20);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Save";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(312, 93);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 21);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Password";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(312, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 21);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Email";
+            // 
             // ServiceCommercial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -337,5 +386,9 @@ namespace AppLourde
         private System.Windows.Forms.DataGridViewTextBoxColumn summOrdersAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn AverageOrderAmount;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -39,7 +39,7 @@ namespace AppLourde
                 username = textBoxUsername.Text,
                 password = textBoxPassword.Text
             };
-            List<string> authorizedRoles = new List<string>() {"admin","dev","moderator"};
+            List<string> authorizedRoles = new List<string>() {"admin","moderator"};
             var res = await methods.LogIn(userinfo);
             var statusCode = (res.StatusCode).ToString();
             if (statusCode == "OK")

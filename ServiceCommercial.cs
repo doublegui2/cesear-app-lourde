@@ -69,5 +69,10 @@ namespace AppLourde
             dataGridView1.Rows[0].Cells[1].Value = res.summOrdersAmount;
             dataGridView1.Rows[0].Cells[2].Value = res.AverageOrderAmount;
         }
+
+        private void panelProfile_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
