@@ -45,6 +45,13 @@ namespace AppLourde
         public string password { get; set; }
     }
 
+    public class OrderStats
+    {
+        public float ordersCount { get; set; }
+        public float summOrdersAmount { get; set; }
+        public float AverageOrderAmount { get; set; }
+    }
+
     static class Program
     {
         static HttpClient client = new HttpClient();
@@ -80,15 +87,30 @@ namespace AppLourde
             client.BaseAddress = new Uri("http://84.7.195.152:8080/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Add("x-access-token", token);
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
+            /*client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));*/
             string userUpdatedJSON = JsonSerializer.Serialize(userUpdated);
             Debug.WriteLine(userUpdatedJSON);
-            var stringContent = new StringContent(userUpdatedJSON);
+            var stringContent = new StringContent(userUpdatedJSON, System.Text.Encoding.UTF8, "application/json-patch+json");
+            Debug.WriteLine(stringContent);
             HttpResponseMessage response = await client.PatchAsync(
                 "api/v1/update/profile", stringContent);
             return response;
         }
+
+        public async Task<OrderStats> GetOrderStats(string token)
+        {
+            OrderStats orderStats;
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://84.7.195.152:8080/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Add("x-access-token", token);
+            client.DefaultRequestHeaders.Accept.Add(
+               new MediaTypeWithQualityHeaderValue("application/json"));
+            orderStats = await client.GetFromJsonAsync<OrderStats>("api/v1/get/stats");
+            return orderStats;
+        }
+        
     }
 
 }

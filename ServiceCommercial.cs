@@ -52,5 +52,22 @@ namespace AppLourde
                 usernameUpdateLabel.Visible = true;
             }
         }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private async void buttonStats_Click(object sender, EventArgs e)
+        {
+            string token = LogIn.token;
+            var res = await methods.GetOrderStats(token);
+            Debug.WriteLine(res.ordersCount);
+            Debug.WriteLine(res.summOrdersAmount);
+            Debug.WriteLine(res.AverageOrderAmount);
+            dataGridView1.Rows[0].Cells[0].Value = res.ordersCount;
+            dataGridView1.Rows[0].Cells[1].Value = res.summOrdersAmount;
+            dataGridView1.Rows[0].Cells[2].Value = res.AverageOrderAmount;
+        }
     }
 }
