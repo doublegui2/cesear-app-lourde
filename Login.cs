@@ -60,10 +60,6 @@ namespace AppLourde
                             ServiceTechnique serviceTech = new ServiceTechnique();
                             serviceTech.Show();
                             break;
-                        case "dev":
-                            DevTiers devTiers = new DevTiers();
-                            devTiers.Show();
-                            break;
                         case "moderator":
                             ServiceCommercial serviceCommercial = new ServiceCommercial();
                             serviceCommercial.Show();

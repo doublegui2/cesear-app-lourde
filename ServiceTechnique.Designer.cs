@@ -36,14 +36,11 @@ namespace AppLourde
             this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonStats = new System.Windows.Forms.Button();
             this.panelProfile = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ordersCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.summOrdersAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AverageOrderAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.usernameUpdateLabel = new System.Windows.Forms.Label();
             this.saveUsernameButton = new System.Windows.Forms.Button();
@@ -53,7 +50,6 @@ namespace AppLourde
             this.usernameEditBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,11 +147,11 @@ namespace AppLourde
             // panelProfile
             // 
             this.panelProfile.BackColor = System.Drawing.Color.DimGray;
+            this.panelProfile.Controls.Add(this.linkLabel1);
             this.panelProfile.Controls.Add(this.label6);
             this.panelProfile.Controls.Add(this.label5);
             this.panelProfile.Controls.Add(this.button3);
             this.panelProfile.Controls.Add(this.button2);
-            this.panelProfile.Controls.Add(this.dataGridView1);
             this.panelProfile.Controls.Add(this.label4);
             this.panelProfile.Controls.Add(this.usernameUpdateLabel);
             this.panelProfile.Controls.Add(this.saveUsernameButton);
@@ -167,6 +163,18 @@ namespace AppLourde
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(1152, 423);
             this.panelProfile.TabIndex = 3;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.Location = new System.Drawing.Point(462, 195);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(259, 21);
+            this.linkLabel1.TabIndex = 13;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "http://84.7.195.152:8080/grafana";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label6
             // 
@@ -205,34 +213,6 @@ namespace AppLourde
             this.button2.TabIndex = 9;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ordersCount,
-            this.summOrdersAmount,
-            this.AverageOrderAmount});
-            this.dataGridView1.Location = new System.Drawing.Point(464, 195);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(347, 86);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // ordersCount
-            // 
-            this.ordersCount.HeaderText = "Number of Orders";
-            this.ordersCount.Name = "ordersCount";
-            // 
-            // summOrdersAmount
-            // 
-            this.summOrdersAmount.HeaderText = "Summ of all Orders";
-            this.summOrdersAmount.Name = "summOrdersAmount";
-            // 
-            // AverageOrderAmount
-            // 
-            this.AverageOrderAmount.HeaderText = "Average Amount of Order";
-            this.AverageOrderAmount.Name = "AverageOrderAmount";
             // 
             // label4
             // 
@@ -313,7 +293,6 @@ namespace AppLourde
             this.panel1.PerformLayout();
             this.panelProfile.ResumeLayout(false);
             this.panelProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,10 +310,6 @@ namespace AppLourde
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ordersCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn summOrdersAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AverageOrderAmount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label usernameUpdateLabel;
         private System.Windows.Forms.Button saveUsernameButton;
@@ -342,5 +317,6 @@ namespace AppLourde
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox usernameEditBox;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
