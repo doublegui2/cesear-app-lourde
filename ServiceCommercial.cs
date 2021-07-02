@@ -67,7 +67,7 @@ namespace AppLourde
             Debug.WriteLine(res.AverageOrderAmount);
             dataGridView1.Rows[0].Cells[0].Value = res.ordersCount;
             dataGridView1.Rows[0].Cells[1].Value = res.summOrdersAmount;
-            dataGridView1.Rows[0].Cells[2].Value = res.AverageOrderAmount;
+            dataGridView1.Rows[0].Cells[2].Value = (res.summOrdersAmount/res.ordersCount);
         }
 
         private void panelProfile_Paint(object sender, PaintEventArgs e)
